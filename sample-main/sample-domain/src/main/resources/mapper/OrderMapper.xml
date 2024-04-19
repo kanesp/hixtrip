@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.5//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hixtrip.sample.domain.mapper.OrderMapper">
+
+    <insert id="insertOrder" >
+        INSERT INTO `order` (
+        `user_id`,
+        `order_sn`,
+        `sku_id`,
+        `amount`,
+        `status`,
+        `total_amount`,
+        `pay_amount`,
+        `pay_type`,
+        `pay_time`,
+        `create_time`,
+        `update_time`
+        )
+        VALUES (
+        #{userId},
+        #{orderSn},
+        #{skuId},
+        #{amount},
+        #{status},
+        #{totalAmount},
+        #{payAmount},
+        #{payType},
+        #{payTime},
+        #{createTime},
+        #{updateTime}
+        )
+    </insert>
+
+</mapper>

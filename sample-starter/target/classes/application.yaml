@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: sample-console
+    profiles:
+      active: prod #默认为开发环境
+
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://148.135.35.175:3307/interview?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull&serverTimezone=Asia/Shanghai
+    username: Lieon
+    password: happy@365
+
+  data:
+    redis:
+      host: 148.135.35.175
+      port: 6380
+      connect-timeout: 6000
+#      username: lieon
+      password: happy@365
+      database: 0
+
+mybatis-plus:
+  mapper-locations: classpath*:**/mapper/*Mapper.xml
+  #实体扫描，多个package用逗号或者分号分隔
+  typeAliasesPackage: com.hixtrip.sample.infra.db.mapper, com.hixtrip.sample.domain.mapper
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
